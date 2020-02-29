@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de links</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Lista de links</h1>
+    <form>
+        <div class="form-col">
+            <input type="text" placeholder="nome do artigo" name="ent_name" autocomplete="off">
+            
+            <select name="prioridade" id="prioridade">
+                <option value="1" selected>1</option>
+                <option value="2" >2</option>
+                <option value="3" >3</option>
+                <option value="4" >4</option>
+                <option value="5" >5</option>
+            </select>
+            <input type="text" placeholder="link do artigo" name="ent_url" autocomplete="off">
+            <button type="submit" onclick="colocarNaLista()">Add</button>
+        </div>
+    </form>
+    
+    <div class="long-bar">
+        <table class="view-list-object">
+            <td class="td-area">  Title</td>
+            <td ></td>
+            <td class="td-area">
+                <select name="type_view_list" onchange="changeListView()">
+                    <option value="earliest" selected>earliest</option>
+                    <option value="latest">latest</option>
+                    <option value="priority">priority</option>
+                </select>
+            </td>
+            <td class="td-area">
+                <button onclick="renderController()" title="stop render system">Show</button>
+            </td>
+            <td class="td-area">
+                <button onclick="deleteAllMarked()" title="Delete all checkbox marked">Delete</button>
+            </td>
+        </table>
+    </div>
+
+    <div class="view-list" id="view-list"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
